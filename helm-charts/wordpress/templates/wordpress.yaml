@@ -5,7 +5,7 @@ metadata:
   labels:
     app: wordpress
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
       app: wordpress
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: wordpress
-          image: wordpress:5.6.2-php7.4-apache
+          image: {{ .Values.wpImage }}:{{ .Values.wpImageTag }}   #wordpress:5.6.2-php7.4-apache
           env:
             - name: WORDPRESS_DB_HOST
               value: mysql-service
@@ -27,4 +27,4 @@ spec:
             - name: WORDPRESS_DB_PASSWORD
               value: shubhi
           ports:
-            - containerPort: 80
+            - containerPort: {{ .Values.containerPort }}

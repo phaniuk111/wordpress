@@ -1,0 +1,13 @@
+
+wpImage: "wordpress"
+wpImageTag: "5.6.2-php7.4-apache"
+
+
+replicas: 1
+maxSurge: 1  
+maxUnavailable: 1
+
+port: 80
+targetPort: 80
+containerPort: 80
+

@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: mysql-deployment
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
       app: mysql
@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: mysql
+        image: {{ .Values.mysqlImage }}
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: shubhi
         ports:
-        - containerPort: 3306
+        - containerPort: {{ .Values.containerPort }}
         volumeMounts:
         - name: mysql-config
           mountPath: /etc/mysql/conf.d/my.cnf

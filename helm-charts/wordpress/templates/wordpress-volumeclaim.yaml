@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: wordpress-volumeclaim
+  name: {{ .Release.Name }}-volumeclaim
 spec:
   accessModes:
     - ReadWriteOnce
