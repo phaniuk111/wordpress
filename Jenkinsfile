@@ -31,7 +31,7 @@ pipeline{
             steps{
                 sh """
                     gcloud container clusters get-credentials wordspres-gke-euwe2 --region europe-west2 --project flash-keel-412418
-                    #helm uninstall wordspress || exit 0
+                    helm uninstall wordspress || exit 0
                     sleep 30
                     helm install  wordspress helm-charts/wordpress -f helm-overrides/wordpress-bld-01.yaml 
                     sleep 60
