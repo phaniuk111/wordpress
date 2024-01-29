@@ -12,10 +12,14 @@ pipeline{
         
         stage('Deploy Mysql'){
             steps{
+                
                 sh """
                    gcloud auth list
                    gcloud container clusters get-credentials wordspres-gke-euwe2 --region europe-west2 --project flash-keel-412418
                    helm uninstall mysql || exit 0
+                   """
+                sh   """
+                   
                    sleep 60     
                    helm install  mysql  helm-charts/mysql -f helm-overrides/mysql-bld-01.yaml 
                    sleep 60
