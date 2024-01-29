@@ -1,0 +1,13 @@
+
+mysqlImage: "mysql"
+
+
+replicas: 1
+maxSurge: 1  
+maxUnavailable: 1
+
+port: 3306
+targetPort: 3306
+containerPort: 3306
+
+storage: 200Gi
