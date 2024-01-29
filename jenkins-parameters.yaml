@@ -1,0 +1,12 @@
+#=====================
+# MYSQL Parameters
+#=====================
+DEPLOY_MYSQL: ""
+UPGRADE_MYSQL: ""
+UNINSTALL_MYSQL: ""
+#=====================
+# WordPress Parameters
+#=====================
+DEPLOY_WORDPRESS: ""
+UPGRADE_WORDPRESS: ""
+UNINSTALL_WORDPRESS: ""
