@@ -14,6 +14,7 @@ pipeline{
             steps{
                 
                 sh """
+                
                    gcloud auth list
                    gcloud container clusters get-credentials wordspres-gke-euwe2 --region europe-west2 --project flash-keel-412418
                    helm uninstall mysql || exit 0
